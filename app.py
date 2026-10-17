@@ -17,7 +17,7 @@ if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY is missing from Colab Secrets")
 
 print("Groq API key loaded successfully!")
-@spaces.GPU
+
 def generate_campaign(
     workshop,
     date,

@@ -5,18 +5,13 @@ from groq import Groq
 import spaces
 MODEL = "openai/gpt-oss-120b"
 import os
-from getpass import getpass
+#from getpass import getpass
 
 #GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 
-import os
+#import os
 
 GROQ_API_KEY = os.environ["GROQ_API_KEY"]
-
-if not GROQ_API_KEY:
-    raise ValueError("GROQ_API_KEY is missing from Colab Secrets")
-
-print("Groq API key loaded successfully!")
 
 def generate_campaign(
     workshop,
@@ -28,7 +23,7 @@ def generate_campaign(
     registration_link,
     tone
 ):
-    api_key = os.environ["GROQ_API_KEY"]
+    api_key = GROQ_API_KEY
 
     if not api_key:
         yield "Error: Configure your GROQ_API_KEY first."

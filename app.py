@@ -2,7 +2,7 @@
 import os
 import gradio as gr
 from groq import Groq
-import spaces
+
 MODEL = "openai/gpt-oss-120b"
 def generate_campaign(
     workshop,
@@ -220,4 +220,8 @@ with gr.Blocks(
         outputs=output
     )
 
-demo.launch(theme=gr.themes.Soft())
+if __name__ == "__main__":
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(os.getenv("PORT", 7861))
+    )

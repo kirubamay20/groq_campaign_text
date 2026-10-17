@@ -4,15 +4,6 @@ import gradio as gr
 from groq import Groq
 import spaces
 MODEL = "openai/gpt-oss-120b"
-import os
-#from getpass import getpass
-
-#GROQ_API_KEY = os.environ["GROQ_API_KEY"]
-
-#import os
-
-GROQ_API_KEY = os.environ["GROQ_API_KEY"]
-
 def generate_campaign(
     workshop,
     date,
@@ -23,7 +14,7 @@ def generate_campaign(
     registration_link,
     tone
 ):
-    api_key = GROQ_API_KEY
+    api_key = os.environ["GROQ_API_KEY"]
 
     if not api_key:
         yield "Error: Configure your GROQ_API_KEY first."
